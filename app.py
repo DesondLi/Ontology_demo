@@ -691,11 +691,11 @@ with col_process:
                 st.markdown("---")
                 col_r1, col_r2 = st.columns(2)
                 with col_r1:
-                    st.markdown(f"**意图处理**: {'✅ 已处理' if response.intent_handled else '❌ 未处理'}")
+                    st.markdown(f"**意图识别**: {'✅ 已识别' if response.intent_handled else '❌ 未识别'}")
                 with col_r2:
                     final_badge = 'badge-passed' if response.validation_result.passed else 'badge-blocked'
-                    final_text = '通过' if response.validation_result.passed else '拦截'
-                    st.markdown(f"**校验结果**: <span class=\"badge {final_badge}\">{final_text}</span>", unsafe_allow_html=True)
+                    final_text = '允许办理' if response.validation_result.passed else '已拦截'
+                    st.markdown(f"**业务结果**: <span class=\"badge {final_badge}\">{final_text}</span>", unsafe_allow_html=True)
 
                 st.markdown('</div>', unsafe_allow_html=True)
 

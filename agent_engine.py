@@ -245,7 +245,7 @@ class ResponseGenerator:
             print(f"[第三层: 生成回复] [模板模式] 生成拒绝回复，错误码: {validation_result.error_code}")
             return GeneratedResponse(
                 response_text=response_text,
-                intent_handled=False,
+                intent_handled=True,
                 validation_result=validation_result
             )
 
@@ -334,7 +334,7 @@ class ResponseGenerator:
 
             return GeneratedResponse(
                 response_text=response_text,
-                intent_handled=validation_result.passed,
+                intent_handled=True,
                 validation_result=validation_result
             )
 
